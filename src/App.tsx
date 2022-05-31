@@ -1,12 +1,15 @@
 import React, {FC} from 'react'
+import {ErrorBoundary, Footer, Header, MainContent} from './components'
 
-const App: FC = () => {
+export const App: FC = () => {
 
     return (
-        <div>
-            <h1>Hello World</h1>
-        </div>
+        <>
+            <ErrorBoundary errorText={'Oops! Something went wrong. Please try again later.'}>
+                <Header/>
+                <MainContent/>
+                <Footer/>
+            </ErrorBoundary>
+        </>
     )
 }
-
-export default App

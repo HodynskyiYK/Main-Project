@@ -1,0 +1,29 @@
+.find-your-movie {
+  padding: 2.125rem 3.75rem 8.375rem;
+
+  .h1 {
+    margin-bottom: 2.375rem;
+  }
+
+  .search-form {}
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .find-input {
+    flex: 1 0 17.625rem;
+    max-width: 100%;
+    margin-right: 0.875rem;
+  }
+
+  .confirm-btn {
+    color: $white_color;
+    background: $red_color;
+    min-width: 14.375rem;
+    text-align: center;
+    padding: 1.125rem 1.125rem;
+  }
+}

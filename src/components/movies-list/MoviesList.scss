@@ -1,0 +1,109 @@
+.movies-counter {
+  padding: 1.25rem 0;
+
+  p {
+    color: $white_color;
+    font: 400 1.25rem/1.2em $main_font;
+    text-transform: lowercase;
+
+    b {
+      font-weight: 600;
+    }
+  }
+}
+
+.movies-list {
+  padding-bottom: 1.5rem;
+}
+
+.movie-card {
+  margin-bottom: 3.125rem;
+
+  .card-header {
+    position: relative;
+    margin-bottom: 1.25rem;
+  }
+
+  .movie-link {
+    position: relative;
+    display: block;
+    font: inherit;
+    z-index: 1;
+  }
+
+  .movie-image {
+    display: block;
+  }
+
+  .edit-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 2.25rem;
+    background: #2A202D;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.196596);
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+
+    svg {
+      display: block;
+    }
+  }
+
+  .card-body {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .movie-title {
+    color: rgba($white_color, 0.7);
+    font: 500 1.125rem/1.2em $main_font;
+    flex: 0 0 calc(100% - 4.375rem);
+    max-width: calc(100% - 4.375rem);
+    margin-bottom: 0.375rem;
+
+    a {
+      position: relative;
+      display: block;
+      font: inherit;
+      z-index: 1;
+    }
+  }
+
+  .release {
+    flex: 0 0 4.375rem;
+    max-width: 4.375rem;
+    color: rgba($white_color, 0.7);
+    font: 500 0.875rem/1.2em $main_font;
+    text-align: center;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    padding: 0.375rem 0;
+    margin-bottom: 0.375rem;
+  }
+
+  .genre {
+    flex: 0 0 100%;
+    max-width: 100%;
+    color: rgba($white_color, 0.5);
+    font: 500 0.875rem/1.2em $main_font;
+  }
+
+  &:hover {
+
+    .edit-btn {
+      opacity: 1;
+    }
+  }
+}

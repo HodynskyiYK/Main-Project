@@ -1,0 +1,26 @@
+@import "../../styles/stylesVariables";
+
+.errorContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 99vw;
+  min-height: calc(100vh - 6.75rem);
+  background: $dark_grey;
+
+  .errorCard {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.125rem;
+  }
+
+  .errorMessage {
+    background: transparent;
+    padding: 0.875rem;
+    border: 0.25rem solid $red_color;
+    border-radius: 0.25rem;
+    margin-bottom: 2.25rem;
+  }
+}

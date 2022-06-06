@@ -1,0 +1,23 @@
+@import "../../../../styles/stylesVariables";
+
+.findYourMovie {
+  padding: 2.125rem 3.75rem 8.375rem;
+
+  .h1 {
+    margin-bottom: 2.375rem;
+  }
+
+  .searchForm {}
+
+  .formGroup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .findInput {
+    flex: 1 0 17.625rem;
+    max-width: 100%;
+    margin-right: 0.875rem;
+  }
+}

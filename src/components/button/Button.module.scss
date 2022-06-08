@@ -1,0 +1,38 @@
+@import "../../styles/StylesVariables";
+
+.btn {
+  font: 500 1.25rem/1em $main_font;
+  text-transform: uppercase;
+  padding: 0.825rem 1.125rem;
+  border-radius: 0.125rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  &.addBtn {
+    color: $red_color;
+    font-weight: 600;
+    background: rgba(96, 96, 96, 0.68);
+  }
+
+  &.errorBtn,
+  &.searchBtn,
+  &.confirmBtn {
+    color: $white_color;
+    background: $red_color;
+    min-width: 14.375rem;
+    text-align: center;
+    padding: 1.125rem 1.125rem;
+  }
+
+  &.resetBtn {
+    color: $red_color;
+    background: transparent;
+    min-width: 14.375rem;
+    text-align: center;
+    padding: 1.125rem 1.125rem;
+    box-shadow: inset 0 0 0 1px $red_color;
+
+  }
+}
+

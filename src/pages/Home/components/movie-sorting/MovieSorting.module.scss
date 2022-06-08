@@ -1,0 +1,49 @@
+@import "../../../../styles/StylesVariables";
+
+.movieSorting {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+
+  .selectedValue {
+    position: relative;
+    display: block;
+    color: $white_color;
+    font: 500 1rem/1em $main_font;
+    text-transform: uppercase;
+    padding: 1.25rem;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 0.25rem);
+      right: 0;
+      border: 0.375rem solid transparent;
+      border-top: 0.5rem solid $red_color;
+    }
+  }
+
+  .label {
+    @extend .selectedValue;
+    padding: 1.25rem 0;
+    opacity: 0.6;
+    margin-right: 0.625rem;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .sortingList {
+    display: none;
+  }
+
+  .sortingItem {
+  }
+
+  .sortingValue {
+  }
+}

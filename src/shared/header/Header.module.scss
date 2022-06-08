@@ -1,0 +1,8 @@
+@import "../../styles/StylesVariables";
+
+.header {
+  background: $black_color url("../../assets/images/header-bg.png") no-repeat center/cover;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0.625rem;
+}

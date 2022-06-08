@@ -1,0 +1,10 @@
+@import "../../styles/StylesVariables";
+
+.Logo {
+  color: $red_color;
+  font: 300 1.25rem/1.2em $main_font;
+
+  b {
+    font-weight: 900
+  }
+}

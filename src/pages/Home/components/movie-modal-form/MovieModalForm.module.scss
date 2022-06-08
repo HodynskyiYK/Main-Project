@@ -1,0 +1,29 @@
+@import "../../../../styles/StylesVariables";
+
+.addMovieForm {
+  display: block;
+  width: 100%;
+
+  .formTitle {
+    margin-bottom: 2.375rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1.875rem;
+  }
+
+  .formButtons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 1.875rem;
+
+    button {
+      margin-right: 0.875rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

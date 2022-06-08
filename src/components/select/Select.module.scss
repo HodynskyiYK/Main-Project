@@ -1,0 +1,21 @@
+@import "../../styles/StylesVariables";
+
+.Select {
+  display: block;
+  color: $white_color;
+  font: 400 1.25rem/1.2em $main_font;
+  padding: 1rem 1.125rem;
+  border-radius: 0.25rem;
+  background: rgba(50, 50, 50, 0.8);
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.Label {
+  display: block;
+  color: $red_color;
+  font: 600 1rem/1.2em $main_font;
+  text-transform: uppercase;
+  margin-bottom: 0.625rem;
+}

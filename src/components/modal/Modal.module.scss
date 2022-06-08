@@ -1,0 +1,46 @@
+@import "../../styles/StylesVariables";
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(35, 35, 35, 0.918051);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(24.4645px);
+  z-index: 9999;
+
+  .modalContent {
+    position: relative;
+    width: 61rem;
+    margin: 8.25% auto 0;
+    padding: 4.25rem 4.25rem 1.875rem;
+    background: $dark_grey;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.07), 0 10px 20px rgba(0, 0, 0, 0.05), 0 10px 50px rgba(0, 0, 0, 0.05);
+  }
+
+  .closeModal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 1.875rem;
+    right: 1.875rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+
+    svg {
+      display: block;
+    }
+  }
+}

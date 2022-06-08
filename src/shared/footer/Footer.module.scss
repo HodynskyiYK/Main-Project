@@ -1,0 +1,14 @@
+@import "../../styles/StylesVariables";
+
+.footer {
+
+  .footerContent {
+    background: $grey;
+  }
+
+  .copyright {
+    text-align: center;
+    margin: 0;
+    padding: 1.5rem 0;
+  }
+}

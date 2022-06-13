@@ -6,7 +6,7 @@ export interface IMovieModalForm {
         movieUrl: string,
         rating: number,
         genre: string,
-        runtime: string | number,
+        duration: string | number,
         overview: string
     }
 }

@@ -1,0 +1,1 @@
+export const getMovieImage = (imageName: string) => require(`/src/assets/images/movie-images/${imageName}`)

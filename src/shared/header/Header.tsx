@@ -3,9 +3,15 @@ import classnames from 'classnames'
 import {AddMovie} from '../../pages/Home/components/add-movie'
 import {FindYourMovie} from '../../pages/Home/components/find-your-movie'
 import { Logo } from '../../components/logo'
+import { useMovieDetailsContext } from '../../context/movie-details-context'
 import styles from './Header.module.scss'
 
 export const Header: FC = () => {
+    const {movieDetailsState} = useMovieDetailsContext()
+
+    if (movieDetailsState) {
+        return null
+    }
 
     return (
         <header className={classnames('container', styles.header)}>

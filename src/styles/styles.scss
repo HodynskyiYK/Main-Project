@@ -1,9 +1,28 @@
-@import "StylesVariables";
+@import "stylesVariables";
 
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+abbr, acronym, address, applet, b, big, blockquote, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, u, ul, var {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: 0 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 html {
@@ -15,6 +34,8 @@ body {
   font: 400 1rem/1.25em $main_font;
   background: $light_gray;
   padding: 3.375rem 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 input,
@@ -119,6 +140,7 @@ h4,
 
 .col {
   flex: 0 0 auto;
+  max-width: 100%;
   padding-left: 1.875rem;
   padding-right: 1.875rem;
 
@@ -145,6 +167,11 @@ h4,
   &.col-8 {
     flex: 0 0 66.666666%;
     max-width: 66.666666%;
+  }
+
+  &.col-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
   }
 
   &.col-12 {

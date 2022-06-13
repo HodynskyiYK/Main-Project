@@ -13,4 +13,8 @@ You could create one component and wrap all your application or use several comp
 
 Implement markup and styles for [“Add movie”](https://www.figma.com/file/fKGjrOqR6nJe6LYJopGCZ8/CDP-Home-Task-%E2%80%93-React-v1?node-id=0%3A505), [“Edit”](https://www.figma.com/file/fKGjrOqR6nJe6LYJopGCZ8/CDP-Home-Task-%E2%80%93-React-v1?node-id=0%3A1005), [“Delete”](https://www.figma.com/file/fKGjrOqR6nJe6LYJopGCZ8/%5BCDP%5D-Home-Task-%E2%80%93-React-v1?node-id=0%3A1817) modal windows and “sorting”.
 
-No need to implement real API calls. Only add pages with mocked data. 
+No need to implement real API calls. Only add pages with mocked data.
+
+## Home task (Task 5) 
+
+Implement a possibility to [view movie details](https://www.figma.com/file/fKGjrOqR6nJe6LYJopGCZ8/CDP-Home-Task-%E2%80%93-React-v1?node-id=0%3A393)

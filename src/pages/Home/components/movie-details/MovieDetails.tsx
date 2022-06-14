@@ -14,60 +14,64 @@ export const MovieDetails: FC = () => {
         hideMovieDetails
     } = useMovieDetailsContext()
 
-    if (!movieDetailsState || !Object.keys(movieInfo).length) {
+    if (!movieDetailsState || (movieInfo && !Object.keys(movieInfo).length)) {
         return null
     }
 
-    const movieImage = getMovieImage(movieInfo.image)
+    if (movieInfo) {
+        const movieImage = getMovieImage(movieInfo.image)
 
-    return (
-        <div className={classnames('container', styles.detailsContent)}>
-            <div className={classnames('row', 'align-items-start', 'justify-content-between')}>
-                <div className="col">
-                    <Logo/>
-                </div>
-                <div className="col">
-                    <Button
-                        buttonClassName={ButtonTypes.ICON_BTN}
-                        buttonText={SEARCH_ICON_29_30}
-                        buttonAction={hideMovieDetails}
-                    />
-                </div>
-            </div>
-            <div className={classnames('row', 'align-items-start', styles.movieDetails)}>
-                <div className="col col-4">
-                    <div className={styles.movieImage}>
-                        <img
-                            src={movieImage}
-                            alt={movieInfo.title}
+        return (
+            <div className={classnames('container', styles.detailsContent)}>
+                <div className={classnames('row', 'align-items-start', 'justify-content-between')}>
+                    <div className="col">
+                        <Logo/>
+                    </div>
+                    <div className="col">
+                        <Button
+                            buttonClassName={ButtonTypes.ICON_BTN}
+                            buttonText={SEARCH_ICON_29_30}
+                            buttonAction={hideMovieDetails}
                         />
                     </div>
                 </div>
-                <div className="col col-8">
-                    <div className="row align-items-center">
-                        <div className="col">
-                            <p className={classnames(styles.movieTitle, 'h1')}>{movieInfo.title}</p>
-                        </div>
-                        <div className="col">
-                            <p className={styles.movieRating}>
-                                <span>{movieInfo.rating}</span>
-                            </p>
+                <div className={classnames('row', 'align-items-start', styles.movieDetails)}>
+                    <div className="col col-4">
+                        <div className={styles.movieImage}>
+                            <img
+                                src={movieImage}
+                                alt={movieInfo.title}
+                            />
                         </div>
                     </div>
-                    <p className={styles.movieGenre}>{movieInfo.genre}</p>
-                    <div className="row">
-                        <div className="col">
-                            <p className={styles.movieRelease}>{movieInfo.release}</p>
+                    <div className="col col-8">
+                        <div className="row align-items-center">
+                            <div className="col">
+                                <p className={classnames(styles.movieTitle, 'h1')}>{movieInfo.title}</p>
+                            </div>
+                            <div className="col">
+                                <p className={styles.movieRating}>
+                                    <span>{movieInfo.rating}</span>
+                                </p>
+                            </div>
                         </div>
-                        <div className="col">
-                            <p className={styles.movieDuration}>{movieInfo.duration}</p>
-                        </div>
-                        <div className={classnames('col', 'col-12')}>
-                            <p className={styles.movieDescription}>{movieInfo.description}</p>
+                        <p className={styles.movieGenre}>{movieInfo.genre}</p>
+                        <div className="row">
+                            <div className="col">
+                                <p className={styles.movieRelease}>{movieInfo.release}</p>
+                            </div>
+                            <div className="col">
+                                <p className={styles.movieDuration}>{movieInfo.duration}</p>
+                            </div>
+                            <div className={classnames('col', 'col-12')}>
+                                <p className={styles.movieDescription}>{movieInfo.description}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        return null
+    }
 }

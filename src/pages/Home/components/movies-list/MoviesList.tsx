@@ -17,7 +17,7 @@ export const MoviesList: FC<IMoviesList> = ({moviesList}) => {
         showDeleteMovieModal
     } = useMovieModalContext()
 
-    const {getMovieDetails} = useMovieDetailsContext()
+    const {updateMovieDetails} = useMovieDetailsContext()
 
     return (
         <>
@@ -33,7 +33,7 @@ export const MoviesList: FC<IMoviesList> = ({moviesList}) => {
                         movieItem={movieItem}
                         editMovie={showEditMovieModal}
                         deleteMovie={showDeleteMovieModal}
-                        getMovieDetails={getMovieDetails}
+                        getMovieDetails={updateMovieDetails}
                     />
                 ))
             }</div>

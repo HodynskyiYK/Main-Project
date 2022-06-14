@@ -1,12 +1,17 @@
 import React, { createContext, FC, useContext, useState } from 'react'
-import { IMovieDetailsContext } from './movieDetailsContextTypes'
+import { IMovieDetailsContext, IMovieDetailsContextType } from './movieDetailsContextTypes'
 import { IMovieItem } from '../../pages/Home/components/movie-card'
 
-const MovieDetailsContext = createContext({
+const MovieDetailsContext = createContext<IMovieDetailsContextType>({
     movieInfo: {} as IMovieItem,
-    getMovieDetails: (movie: IMovieItem) => console.log(movie),
+    updateMovieDetails: (movie: IMovieItem) => {
+        console.log(movie)
+        throw new Error("Do not use context out of context provider")
+    },
     movieDetailsState: false,
-    hideMovieDetails: () => console.log('false')
+    hideMovieDetails: () => {
+        throw new Error("Do not use context out of context provider")
+    }
 })
 
 export const useMovieDetailsContext = () => useContext(MovieDetailsContext)
@@ -15,7 +20,7 @@ export const MovieDetailsContextProvider: FC<IMovieDetailsContext> = ({children}
     const [movieDetailsState, setMovieDetailsState] = useState<boolean>(false)
     const [movieInfo, setMovieInfo] = useState<IMovieItem>({} as IMovieItem)
 
-    const getMovieDetails = (movie: IMovieItem) => {
+    const updateMovieDetails = (movie: IMovieItem) => {
         setMovieInfo({...movie})
         if (!movieDetailsState) {
             setMovieDetailsState(true)
@@ -33,7 +38,7 @@ export const MovieDetailsContextProvider: FC<IMovieDetailsContext> = ({children}
         <MovieDetailsContext.Provider value={{
             movieInfo,
             movieDetailsState,
-            getMovieDetails,
+            updateMovieDetails,
             hideMovieDetails
         }}>
             {children}

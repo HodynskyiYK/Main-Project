@@ -5,12 +5,24 @@ const MovieModalContext = createContext({
     addMovieModalState: false,
     editMovieModalState: false,
     deleteMovieModalState: false,
-    showAddMovieModal: () => console.log('true'),
-    hideAddMovieModal: () => console.log('false'),
-    showEditMovieModal: () => console.log('true'),
-    hideEditMovieModal: () => console.log('false'),
-    showDeleteMovieModal: () => console.log('true'),
-    hideDeleteMovieModal: () => console.log('false')
+    showAddMovieModal: (): void | never => {
+        throw new Error("Do not use context out of context provider")
+    },
+    hideAddMovieModal: (): void | never => {
+        throw new Error("Do not use context out of context provider")
+    },
+    showEditMovieModal: (): void | never => {
+        throw new Error("Do not use context out of context provider")
+    },
+    hideEditMovieModal: (): void | never => {
+        throw new Error("Do not use context out of context provider")
+    },
+    showDeleteMovieModal: (): void | never => {
+        throw new Error("Do not use context out of context provider")
+    },
+    hideDeleteMovieModal: (): void | never => {
+        throw new Error("Do not use context out of context provider")
+    }
 })
 
 export const useMovieModalContext = () => useContext(MovieModalContext)

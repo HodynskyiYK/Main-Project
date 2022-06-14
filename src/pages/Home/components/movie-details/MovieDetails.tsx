@@ -14,7 +14,7 @@ export const MovieDetails: FC = () => {
         hideMovieDetails
     } = useMovieDetailsContext()
 
-    if (!movieDetailsState || !movieInfo || !Object.keys(movieInfo).length) {
+    if (!movieDetailsState || !movieInfo) {
         return null
     }
 

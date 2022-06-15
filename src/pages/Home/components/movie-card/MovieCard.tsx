@@ -1,14 +1,20 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, MouseEvent } from 'react'
 import classnames from 'classnames'
 import {IMovieCard} from './movieCardTypes'
-import styles from './MoviesCard.module.scss'
 import { CLOSE_ICON_12_13, THREE_VERTICAL_DOTS_44_44 } from '../../../../assets/svg'
+import { getMovieImage } from '../../../../utils'
+import styles from './MoviesCard.module.scss'
 
-const getMovieImage = (imageName: string) => require(`../../../../assets/images/movie-images/${imageName}.png`)
 
-export const MovieCard: FC<IMovieCard> = ({movieItem, editMovie, deleteMovie}) => {
+export const MovieCard: FC<IMovieCard> = ({movieItem, editMovie, deleteMovie, getMovieDetails}) => {
     const [editMode, setEditMode] = useState<boolean>(false)
     const movieImage = getMovieImage(movieItem.image)
+
+    const movieLinkHandler = (event: MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault()
+
+        getMovieDetails(movieItem)
+    }
 
     return (
         <div className={classnames('col', 'col-4')}>
@@ -18,6 +24,7 @@ export const MovieCard: FC<IMovieCard> = ({movieItem, editMovie, deleteMovie}) =
                         href={movieItem.link}
                         title={movieItem.title}
                         className={styles.movieLink}
+                        onClick={movieLinkHandler}
                     >
                         <img
                             className={styles.movieImage}

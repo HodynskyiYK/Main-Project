@@ -1,11 +1,12 @@
 import React, {FC} from 'react'
-import {IMoviesList} from './moviesTypes'
+import {IMoviesList} from './moviesListTypes'
 import classnames from 'classnames'
 import {MovieCard} from '../movie-card'
 import { useMovieModalContext } from '../../../../context/movie-modal-context'
 import { MovieModalForm } from '../movie-modal-form'
 import { DeleteMovieModal } from '../delete-movie-modal'
-import { MOVIE_INFORMATION } from './moviesConstans'
+import { MOVIE_INFORMATION } from './moviesListConstans'
+import { useMovieDetailsContext } from '../../../../context/movie-details-context'
 import styles from './MoviesList.module.scss'
 
 export const MoviesList: FC<IMoviesList> = ({moviesList}) => {
@@ -15,6 +16,8 @@ export const MoviesList: FC<IMoviesList> = ({moviesList}) => {
         showEditMovieModal,
         showDeleteMovieModal
     } = useMovieModalContext()
+
+    const {updateMovieDetails} = useMovieDetailsContext()
 
     return (
         <>
@@ -30,6 +33,7 @@ export const MoviesList: FC<IMoviesList> = ({moviesList}) => {
                         movieItem={movieItem}
                         editMovie={showEditMovieModal}
                         deleteMovie={showDeleteMovieModal}
+                        getMovieDetails={updateMovieDetails}
                     />
                 ))
             }</div>

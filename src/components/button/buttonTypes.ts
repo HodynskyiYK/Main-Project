@@ -1,12 +1,15 @@
+import { ReactNode } from 'react'
+
 export interface IButton {
     buttonClassName: string,
     buttonAction?: () => void,
-    buttonText: string,
+    buttonText: string | ReactNode,
 }
 
 export enum ButtonTypes {
     ADD_BTN = 'addBtn',
     ERROR_BTN = 'errorBtn',
     SEARCH_BTN = 'searchBtn',
-    RESET_BTN = 'resetBtn'
+    RESET_BTN = 'resetBtn',
+    ICON_BTN = 'iconBtn'
 }

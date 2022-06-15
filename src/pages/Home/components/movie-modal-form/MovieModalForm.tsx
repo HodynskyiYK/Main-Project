@@ -74,7 +74,7 @@ export const MovieModalForm: FC<IMovieModalForm> = ({modalName, formValues}) => 
                             inputName={'movieRuntime'}
                             labelText={'Runtime'}
                             inputPlaceholder={'minutes'}
-                            inputValue={formValues?.runtime}
+                            inputValue={formValues?.duration}
                         />
                     </div>
                 </div>

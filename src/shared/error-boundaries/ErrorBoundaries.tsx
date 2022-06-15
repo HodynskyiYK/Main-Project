@@ -8,6 +8,7 @@ export class ErrorBoundary extends Component<IErrorBoundaryProps, IErrorBoundary
         hasError: false
     }
 
+    // eslint-disable-next-line
     public static getDerivedStateFromError(_: Error): IErrorBoundaryState {
         // Update state so the next render will show the fallback UI.
         return { hasError: true }

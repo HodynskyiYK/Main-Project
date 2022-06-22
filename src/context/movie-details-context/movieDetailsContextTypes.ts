@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { IMovieItem } from '../../pages/Home/components/movie-card'
+import { IMovieItem } from '../../store/actions-types'
 
 export interface IMovieDetailsContext {
     children: ReactNode

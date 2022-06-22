@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { Logo } from '../../../../components/logo'
 import { Button, ButtonTypes } from '../../../../components/button'
 import { SEARCH_ICON_29_30 } from '../../../../assets/svg'
-import { getMovieImage } from '../../../../utils'
+import { concatMovieGenres, configureRuntime, getFullYear, getMovieImage } from '../../../../utils'
 import { useMovieDetailsContext } from '../../../../context/movie-details-context'
 import styles from './MovieDetails.module.scss'
 
@@ -18,7 +18,7 @@ export const MovieDetails: FC = () => {
         return null
     }
 
-    const movieImage = getMovieImage(movieInfo.image)
+    console.log(movieInfo)
 
     return (
         <div className={classnames('container', styles.detailsContent)}>
@@ -38,32 +38,35 @@ export const MovieDetails: FC = () => {
                 <div className="col col-4">
                     <div className={styles.movieImage}>
                         <img
-                            src={movieImage}
+                            src={movieInfo.poster_path}
                             alt={movieInfo.title}
+                            onError={({ currentTarget }) => {
+                                const defaultImage = getMovieImage('placeholder_320x480.png')
+                                currentTarget.onerror = null // prevents looping
+                                currentTarget.src=defaultImage
+                            }}
                         />
                     </div>
                 </div>
                 <div className="col col-8">
-                    <div className="row align-items-center">
+                    <div className="row nowrap align-items-center">
+                        <p className={classnames(styles.movieTitle, 'h1', 'col')}>{movieInfo.title}</p>
                         <div className="col">
-                            <p className={classnames(styles.movieTitle, 'h1')}>{movieInfo.title}</p>
-                        </div>
-                        <div className="col">
-                            <p className={styles.movieRating}>
-                                <span>{movieInfo.rating}</span>
+                            <p className={classnames(styles.movieRating, 'col')}>
+                                <span>{movieInfo.vote_average}</span>
                             </p>
                         </div>
                     </div>
-                    <p className={styles.movieGenre}>{movieInfo.genre}</p>
+                    <p className={styles.movieGenre}>{concatMovieGenres(movieInfo.genres)}</p>
                     <div className="row">
                         <div className="col">
-                            <p className={styles.movieRelease}>{movieInfo.release}</p>
+                            <p className={styles.movieRelease}>{getFullYear(movieInfo.release_date)}</p>
                         </div>
                         <div className="col">
-                            <p className={styles.movieDuration}>{movieInfo.duration}</p>
+                            <p className={styles.movieDuration}>{configureRuntime(movieInfo.runtime)}</p>
                         </div>
                         <div className={classnames('col', 'col-12')}>
-                            <p className={styles.movieDescription}>{movieInfo.description}</p>
+                            <p className={styles.movieDescription}>{movieInfo.overview}</p>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,28 @@
+@import "../../styles/stylesVariables";
+
+.loaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6.5%;
+
+  .loader {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border: 0.3125rem solid $white_color;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

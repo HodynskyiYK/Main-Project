@@ -2,11 +2,12 @@
 
 .mainContent {
   background: $dark_grey;
+  padding-bottom: 1.875rem;
 
   .topContent {
     position: relative;
     border-bottom: 1px solid #080707;
-    z-index: 1;
+    z-index: 10;
 
     &:after {
       content: '';

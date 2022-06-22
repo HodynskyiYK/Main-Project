@@ -1,6 +1,6 @@
 import React, { createContext, FC, useContext, useState } from 'react'
 import { IMovieDetailsContext, IMovieDetailsContextType } from './movieDetailsContextTypes'
-import { IMovieItem } from '../../pages/Home/components/movie-card'
+import { IMovieItem } from '../../store/actions-types'
 
 const MovieDetailsContext = createContext<IMovieDetailsContextType>({
     movieInfo: {} as IMovieItem,

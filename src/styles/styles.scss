@@ -109,7 +109,8 @@ h4,
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 3.75rem;
+  padding-left: 3.75rem;
+  padding-right: 3.75rem;
 }
 
 .row {
@@ -119,6 +120,10 @@ h4,
   justify-content: flex-start;
   margin-left: -1.875rem;
   margin-right: -1.875rem;
+
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
 
   &.smaller {
     margin-left: -0.9375rem;

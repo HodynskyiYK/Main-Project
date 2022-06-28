@@ -7,7 +7,9 @@ export const Button: FC<IButton> = ({buttonClassName, buttonAction, buttonText, 
 
     return (
         <button
-            className={classnames(styles.btn, `${styles[buttonClassName]}`, buttonDisabled && styles.buttonDisabled)}
+            className={classnames(styles.btn, `${styles[buttonClassName]}`, {
+                [styles.buttonDisabled]: buttonDisabled
+            })}
             onClick={buttonAction}
             disabled={buttonDisabled}
         >

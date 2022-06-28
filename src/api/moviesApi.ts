@@ -1,8 +1,17 @@
-export const moviesApis = {
-    GetMovies: (movieGenre?: string, sortBy = 'release_date') => {
-        const filterBy = `&filter=${movieGenre}`
-        const sortType = `&sortBy=${sortBy}&sortOrder=desc`
+import queryString from 'query-string'
 
-        return `${process.env.REACT_APP_API}/movies?limit=9&offset=0${filterBy}${sortType}`
+export const moviesApis = {
+    getMovies: (movieGenre: string, sortBy: string) => {
+        const parsedParams = queryString.parse('limit=9&offset=0')
+        if (movieGenre) {
+            parsedParams.filter = movieGenre
+        }
+        if (sortBy) {
+            parsedParams.sortBy = sortBy
+            parsedParams.sortOrder = 'desc'
+        }
+        const requestParams = queryString.stringify(parsedParams)
+
+        return `${process.env.REACT_APP_API}/movies?${requestParams}`
     },
 }

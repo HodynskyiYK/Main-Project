@@ -18,8 +18,6 @@ export const MovieDetails: FC = () => {
         return null
     }
 
-    console.log(movieInfo)
-
     return (
         <div className={classnames('container', styles.detailsContent)}>
             <div className={classnames('row', 'align-items-start', 'justify-content-between')}>

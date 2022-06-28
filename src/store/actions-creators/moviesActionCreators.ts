@@ -28,16 +28,14 @@ export const MoviesActionCreators = {
             dispatch(MoviesActionCreators.setLoading(true))
             dispatch(MoviesActionCreators.setFilterBy(movieGenre))
             dispatch(MoviesActionCreators.setSortingBy(sortBy))
-            //setTimeout(async () => {
                 try {
-                    const response = await fetch(moviesApis.GetMovies(movieGenre, sortBy))
+                    const response = await fetch(moviesApis.getMovies(movieGenre, sortBy))
                     const movies = await response.json()
                     dispatch(MoviesActionCreators.setMovies(movies.data))
                 } catch (err) {
                     console.log(err)
                     dispatch(MoviesActionCreators.setError('Some error!'))
                 }
-            //}, 1000)
         }
     }
 }

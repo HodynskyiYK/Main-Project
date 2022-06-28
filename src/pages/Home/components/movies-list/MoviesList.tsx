@@ -10,7 +10,6 @@ import { Loader } from '../../../../shared/loader'
 import { useAction, useTypedSelector } from '../../../../hooks'
 import styles from './MoviesList.module.scss'
 import { EmptyMovieList } from './EmptyMovieList'
-// import { Button } from '../../../../components/button'
 
 export const MoviesList: FC = () => {
     const {fetchMovies} = useAction()
@@ -29,7 +28,6 @@ export const MoviesList: FC = () => {
     // eslint-disable-next-line
     }, [])
 
-    // console.log(movies)
     return (
         <>
             <div className={styles.moviesCounter}>
@@ -58,17 +56,6 @@ export const MoviesList: FC = () => {
                 isLoading && (
                     <Loader />
                 )
-            }
-            {/*<div className={styles.loadMore}>
-                <Button
-                    buttonClassName={'addBtn'}
-                    buttonText={isLoading ? 'Loading...' : 'Load more'}
-                    buttonDisabled={isLoading}
-                    buttonAction={() => fetchMovies()}
-                />
-            </div>*/}
-            {
-
             }
             {
                 editMovieModalState && <MovieModalForm modalName={'Edit movie'} formValues={MOVIE_INFORMATION} />

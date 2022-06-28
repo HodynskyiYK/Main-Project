@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react'
 import styles from './MovieSorting.module.scss'
 import { useAction, useTypedSelector } from '../../../../hooks'
 import { MOVIE_SORTING_TYPES } from './movieSortingConstants'
+import { IMovieSortingItem } from './movieSortingTypes'
 
 export const MovieSorting: FC = () => {
     const [showSortingList, setShowSortingList] = useState<boolean>(false)
@@ -13,7 +14,7 @@ export const MovieSorting: FC = () => {
         setShowSortingList(!showSortingList)
     }
 
-    const changeSortingType = (sortItem: any) => {
+    const changeSortingType = (sortItem: IMovieSortingItem) => {
         if (sortItem.name !== activeSorting) {
             fetchMovies(filterBy, sortItem.value)
             setActiveSorting(sortItem.name)
@@ -36,10 +37,12 @@ export const MovieSorting: FC = () => {
                                 className={styles.sortingItem}
                                 key={item.id}
                             >
-                                <span
+                                <div
                                     className={styles.sortingValue}
                                     onClick={() => changeSortingType(item)}
-                                >{item.name}</span>
+                                >
+                                    {item.name}
+                                </div>
                             </li>
                         ))
                     }</ul>

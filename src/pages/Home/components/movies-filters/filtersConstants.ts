@@ -1,31 +1,31 @@
 export const FILTERS_VALUES = [
     {
         name: 'All',
-        value: 'all',
+        value: 'All',
         active: true,
         id: 1
     },
     {
         name: 'Documentary',
-        value: 'documentary',
+        value: 'Documentary',
         active: false,
         id: 2
     },
     {
         name: 'Comedy',
-        value: 'comedy',
+        value: 'Comedy',
         active: false,
         id: 3
     },
     {
         name: 'Horror',
-        value: 'horror',
+        value: 'Horror',
         active: false,
         id: 4
     },
     {
         name: 'Crime',
-        value: 'crime',
+        value: 'Crime',
         active: false,
         id: 5
     }

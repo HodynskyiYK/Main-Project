@@ -4,6 +4,7 @@ export interface IButton {
     buttonClassName: string,
     buttonAction?: () => void,
     buttonText: string | ReactNode,
+    buttonDisabled?: boolean
 }
 
 export enum ButtonTypes {

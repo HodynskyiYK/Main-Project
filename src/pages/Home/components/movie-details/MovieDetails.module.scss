@@ -19,7 +19,9 @@
     }
   }
 
-  .movieTitle {}
+  .movieTitle {
+    max-width: calc(100% - 120px);
+  }
 
   .movieRating {
     display: flex;

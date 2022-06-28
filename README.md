@@ -18,3 +18,7 @@ No need to implement real API calls. Only add pages with mocked data.
 ## Home task (Task 5) 
 
 Implement a possibility to [view movie details](https://www.figma.com/file/fKGjrOqR6nJe6LYJopGCZ8/CDP-Home-Task-%E2%80%93-React-v1?node-id=0%3A393)
+
+## Home task (Task 6)
+
+Integrate with the backend and use Redux

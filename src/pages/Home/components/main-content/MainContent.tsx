@@ -1,19 +1,11 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC } from 'react'
 import classnames from 'classnames'
 import {FILTERS_VALUES, MoviesFilters} from '../movies-filters'
 import {MovieSorting} from '../movie-sorting'
-import { MOVIES, MoviesList } from '../movies-list'
+import { MoviesList } from '../movies-list'
 import styles from './MainContent.module.scss'
-import { IMovieItem } from '../movie-card'
 
 export const MainContent: FC = () => {
-    const [movieList, setMovieList] = useState<IMovieItem[]>([])
-
-    useEffect(() => {
-        if (MOVIES.length) {
-            setMovieList(MOVIES)
-        }
-    }, [])
 
     return (
         <main>
@@ -29,7 +21,7 @@ export const MainContent: FC = () => {
                             </div>
                         </div>
                     </div>
-                    <MoviesList moviesList={movieList}/>
+                    <MoviesList/>
                 </div>
             </section>
         </main>

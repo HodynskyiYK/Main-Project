@@ -1,17 +1,53 @@
-import React, {FC} from 'react'
+import React, { FC, useState } from 'react'
 import styles from './MovieSorting.module.scss'
+import { useAction, useTypedSelector } from '../../../../hooks'
+import { MOVIE_SORTING_TYPES } from './movieSortingConstants'
+import { IMovieSortingItem } from './movieSortingTypes'
 
 export const MovieSorting: FC = () => {
+    const [showSortingList, setShowSortingList] = useState<boolean>(false)
+    const [activeSorting, setActiveSorting] = useState<string>('Release date')
+    const {fetchMovies} = useAction()
+    const {filterBy} = useTypedSelector(state => state.movies)
+
+    const toggleSortingList = () => {
+        setShowSortingList(!showSortingList)
+    }
+
+    const changeSortingType = (sortItem: IMovieSortingItem) => {
+        if (sortItem.name !== activeSorting) {
+            fetchMovies(filterBy, sortItem.value)
+            setActiveSorting(sortItem.name)
+        }
+        toggleSortingList()
+    }
 
     return (
         <div className={styles.movieSorting}>
             <p className={styles.label}>Sort by</p>
-            <p className={styles.selectedValue}>Release date</p>
-            <ul className={styles.sortingList}>
-                <li className={styles.sortingItem}>
-                    <span className={styles.sortingValue}>Release date</span>
-                </li>
-            </ul>
+            <p
+                className={styles.selectedValue}
+                onClick={toggleSortingList}
+            >{activeSorting}</p>
+            {
+                showSortingList && (
+                    <ul className={styles.sortingList}>{
+                        MOVIE_SORTING_TYPES.map(item => (
+                            <li
+                                className={styles.sortingItem}
+                                key={item.id}
+                            >
+                                <div
+                                    className={styles.sortingValue}
+                                    onClick={() => changeSortingType(item)}
+                                >
+                                    {item.name}
+                                </div>
+                            </li>
+                        ))
+                    }</ul>
+                )
+            }
         </div>
     )
 }

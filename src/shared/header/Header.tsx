@@ -14,7 +14,7 @@ export const Header: FC = () => {
     }
 
     return (
-        <header className={classnames('container', styles.header)}>
+        <header className={classnames('container', styles.headerContainer, styles.headerContent)}>
             <div className={classnames('row', 'align-items-start', 'justify-content-between')}>
                 <div className={classnames('col')}>
                     <Logo/>

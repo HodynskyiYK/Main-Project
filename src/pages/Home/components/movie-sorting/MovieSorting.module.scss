@@ -6,13 +6,16 @@
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-end;
+  z-index: 10;
 
   .selectedValue {
     position: relative;
     display: block;
     color: $white_color;
     font: 500 1rem/1em $main_font;
+    text-align: right;
     text-transform: uppercase;
+    min-width: 10.25rem;
     padding: 1.25rem;
     cursor: pointer;
 
@@ -30,6 +33,7 @@
     @extend .selectedValue;
     padding: 1.25rem 0;
     opacity: 0.6;
+    min-width: auto;
     margin-right: 0.625rem;
 
     &:after {
@@ -38,12 +42,34 @@
   }
 
   .sortingList {
-    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: $black_color;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.07), 0 10px 20px rgba(0, 0, 0, 0.05), 0 10px 50px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    z-index: 5;
   }
 
   .sortingItem {
+    border-bottom: 1px solid $dark_grey;
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 
   .sortingValue {
+    color: $white_color;
+    font: 500 1rem/1.2em $main_font;
+    text-transform: uppercase;
+    padding: 0.75rem 0.5rem;
+    cursor: pointer;
+
+    &.active,
+    &:hover {
+      background: $red_color;
+    }
   }
 }

@@ -2,7 +2,7 @@ import { IMovieItem } from '../../../../store/actions-types'
 
 export interface IMovieCard {
     movieItem: IMovieItem
-    editMovie: () => void,
-    deleteMovie: () => void,
+    editMovie: (movie: IMovieItem) => void,
+    deleteMovie: (id: number | undefined) => void,
     getMovieDetails: (movie: IMovieItem) => void
 }

@@ -28,5 +28,11 @@ export const FILTERS_VALUES = [
         value: 'Crime',
         active: false,
         id: 5
+    },
+    {
+        name: 'Action',
+        value: 'Action',
+        active: false,
+        id: 6
     }
 ]

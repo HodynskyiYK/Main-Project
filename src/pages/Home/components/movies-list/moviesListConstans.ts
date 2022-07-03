@@ -68,11 +68,19 @@ export const MOVIES = [
 ]
 
 export const MOVIE_INFORMATION = {
-    title: 'Moana',
-    releaseDate: '11/14/2016',
-    movieUrl: 'https://www.moana.com',
-    rating: 7.6,
-    genre: 'Select Genre',
-    duration: '1h 47min',
-    overview: 'Moana Waialiki is a sea voyaging enthusiast and the only daughter of a chief in a long line of navigators. When her island\'s fishermen can\'t catch any fish and the crops fail, she learns that the demigod Maui caused the blight by stealing the heart of the goddess, Te Fiti. The only way to heal the island is to persuade Maui to return Te Fiti\'s heart, so Moana sets off on an epic journey across the Pacific. The film is based on stories from Polynesian mythology.'
+    "title": "La La Land3",
+    "tagline": "Here's to the fools who dream.",
+    "vote_average": 7.9,
+    "vote_count": 6782,
+    "release_date": "2016-12-29",
+    "poster_path": "https://image.tmdb.org/t/p/w500/ylXCdC106IKiarftHkcacasaAcb.jpg",
+    "overview": "Mia, an aspiring actress, serves lattes to movie stars in between auditions and Sebastian, a jazz musician, scrapes by playing cocktail party gigs in dingy bars, but as success mounts they are faced with decisions that begin to fray the fragile fabric of their love affair, and the dreams they worked so hard to maintain in each other threaten to rip them apart.",
+    "budget": 30000000,
+    "revenue": 445435700,
+    "runtime": 128,
+    "genres": [
+        "Comedy",
+        "Drama",
+        "Romance"
+    ]
 }

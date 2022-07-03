@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { IButton } from './buttonTypes'
 import styles from './Button.module.scss'
 
-export const Button: FC<IButton> = ({buttonClassName, buttonAction, buttonText, buttonDisabled}) => {
+export const Button: FC<IButton> = ({buttonClassName, buttonAction, buttonText, buttonDisabled, buttonType}) => {
 
     return (
         <button
@@ -12,6 +12,7 @@ export const Button: FC<IButton> = ({buttonClassName, buttonAction, buttonText, 
             })}
             onClick={buttonAction}
             disabled={buttonDisabled}
+            type={buttonType}
         >
             {buttonText}
         </button>

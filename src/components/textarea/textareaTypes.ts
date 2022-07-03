@@ -3,5 +3,7 @@ export interface ITextArea {
     textAreaName: string
     textAreaPlaceholder?: string
     labelText?: string,
-    textAreaValue?: string
+    textAreaValue?: string,
+    onChange?: (e: any) => any,
+    onBlur?: (e: any) => any
 }

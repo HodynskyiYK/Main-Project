@@ -8,7 +8,9 @@ export const TextArea: FC<ITextArea> = (
         textAreaName,
         textAreaPlaceholder,
         labelText,
-        textAreaValue
+        textAreaValue,
+        onChange,
+        onBlur
     }) => {
 
     return (
@@ -29,6 +31,8 @@ export const TextArea: FC<ITextArea> = (
                 rows={7}
                 placeholder={textAreaPlaceholder}
                 value={textAreaValue}
+                onChange={onChange}
+                onBlur={onBlur}
             />
         </>
     )

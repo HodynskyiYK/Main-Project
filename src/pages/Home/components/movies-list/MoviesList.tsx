@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import classnames from 'classnames'
 import {MovieCard} from '../movie-card'
 import { useMovieModalContext } from '../../../../context/movie-modal-context'
@@ -10,8 +10,11 @@ import { Loader } from '../../../../shared/loader'
 import { useAction, useTypedSelector } from '../../../../hooks'
 import styles from './MoviesList.module.scss'
 import { EmptyMovieList } from './EmptyMovieList'
+import { IMovieItem } from '../../../../store/actions-types'
 
 export const MoviesList: FC = () => {
+    const [editMovie, setEditMovie] = useState<IMovieItem>(MOVIE_INFORMATION)
+    const [deleteMovieId, setDeleteMovieId] = useState<number>(0)
     const {fetchMovies} = useAction()
     const {movies, isLoading, filterBy, sortBy} = useTypedSelector(state => state.movies)
     const {
@@ -28,6 +31,18 @@ export const MoviesList: FC = () => {
     // eslint-disable-next-line
     }, [])
 
+    const getEditMovie = (movie: IMovieItem) => {
+        setEditMovie(movie)
+        showEditMovieModal()
+    }
+
+    const getEditMovieId = (id: number | undefined) => {
+        if (id) {
+            setDeleteMovieId(id)
+            showDeleteMovieModal()
+        }
+    }
+
     return (
         <>
             <div className={styles.moviesCounter}>
@@ -42,8 +57,8 @@ export const MoviesList: FC = () => {
                             <MovieCard
                                 key={movieItem.id}
                                 movieItem={movieItem}
-                                editMovie={showEditMovieModal}
-                                deleteMovie={showDeleteMovieModal}
+                                editMovie={getEditMovie}
+                                deleteMovie={getEditMovieId}
                                 getMovieDetails={updateMovieDetails}
                             />
                         ))
@@ -58,10 +73,10 @@ export const MoviesList: FC = () => {
                 )
             }
             {
-                editMovieModalState && <MovieModalForm modalName={'Edit movie'} formValues={MOVIE_INFORMATION} />
+                editMovieModalState && <MovieModalForm modalName={'Edit movie'} formValues={editMovie} />
             }
             {
-                deleteMovieModalState && <DeleteMovieModal />
+                deleteMovieModalState && <DeleteMovieModal movieId={deleteMovieId} />
             }
         </>
     )

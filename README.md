@@ -22,3 +22,9 @@ Implement a possibility to [view movie details](https://www.figma.com/file/fKGjr
 ## Home task (Task 6)
 
 Integrate with the backend and use Redux
+
+## Home task (Task 7)
+
+Install [formik](https://formik.org/), implement a possibility to “Add movie”, “Edit movie” and “Delete movie”.
+
+Required validation criteria can be found in API docs: [http://localhost:4000/api-docs](http://localhost:4000/api-docs). 

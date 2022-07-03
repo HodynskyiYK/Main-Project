@@ -4,5 +4,8 @@ export interface IInput {
     inputName: string
     inputPlaceholder?: string
     labelText?: string,
-    inputValue?: string | number | undefined
+    inputValue?: string | number | undefined,
+    errorMessage?: string | null,
+    onChange?: (e: any) => any,
+    onBlur?: (e: any) => any
 }

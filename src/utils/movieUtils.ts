@@ -25,7 +25,7 @@ export const splitMoviesGenres = (genres: string[] | string): string[] => {
 
 }
 
-export const setEmptyMovieFields = (movie: IMovieItem): IMovieItem => ({
+export const fillEmptyMovieFields = (movie: IMovieItem): IMovieItem => ({
     ...movie,
     title: movie.title ? movie.title : 'Movie Title',
     tagline: movie.tagline ? movie.tagline : 'Tags',

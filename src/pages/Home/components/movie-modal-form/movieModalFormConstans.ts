@@ -2,7 +2,7 @@ import { IMovieItem } from '../../../../store/actions-types'
 
 export const MOVIE_GENRES = ['Action', 'Adventure', 'Crime', 'Drama', 'Mystery', 'Documentary', 'Comedy', 'Romance', 'Horror', 'Thriller', 'Fantasy']
 
-export const FORM_VALIDATE = (values: IMovieItem) => {
+export const movieFormValidate = (values: IMovieItem) => {
     const errors = {} as any;
     if (!values.title) {
         errors.title = 'Required';

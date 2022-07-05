@@ -5,13 +5,13 @@ import styles from './MovieModalForm.module.scss'
 import classnames from 'classnames'
 import { Input } from '../../../../components/input'
 import { Select } from '../../../../components/select'
-import { FORM_VALIDATE, MOVIE_GENRES } from './movieModalFormConstans'
+import { movieFormValidate, MOVIE_GENRES } from './movieModalFormConstans'
 import { TextArea } from '../../../../components/textarea'
 import { Button, ButtonTypes } from '../../../../components/button'
 import { useAction, useTypedSelector } from '../../../../hooks'
 import { useFormik } from 'formik'
 import { IMovieItem } from '../../../../store/actions-types'
-import { setEmptyMovieFields } from '../../../../utils'
+import { fillEmptyMovieFields } from '../../../../utils'
 import { CompletionMoviePopup } from './CompletionMoviePopup'
 
 
@@ -33,9 +33,9 @@ export const MovieModalForm: FC<IMovieModalForm> = ({modalName, formValues}) => 
             runtime:  formValues?.runtime || '',
             genres:  formValues?.genres[0] || ''
         } as IMovieItem,
-        validate: FORM_VALIDATE,
+        validate: movieFormValidate,
         onSubmit: async (values, {resetForm}) => {
-            const movie: IMovieItem = setEmptyMovieFields(values)
+            const movie: IMovieItem = fillEmptyMovieFields(values)
             let responseStatus
             if (formValues) {
                 const updatedMovie = {

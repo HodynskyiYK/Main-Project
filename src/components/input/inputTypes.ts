@@ -1,3 +1,5 @@
+import { ChangeEventHandler } from 'react'
+
 export interface IInput {
     inputClassName?: string
     inputType: string
@@ -6,6 +8,6 @@ export interface IInput {
     labelText?: string,
     inputValue?: string | number | undefined,
     errorMessage?: string | null,
-    onChange?: (e: any) => any,
-    onBlur?: (e: any) => any
+    onChange?: ChangeEventHandler<HTMLInputElement>,
+    onBlur?: ChangeEventHandler<HTMLInputElement>
 }

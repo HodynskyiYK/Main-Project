@@ -49,13 +49,13 @@ export const MovieCard: FC<IMovieCard> = ({movieItem, editMovie, deleteMovie, ge
                                     <li>
                                         <button
                                             className={styles.editMovie}
-                                            onClick={editMovie}
+                                            onClick={() => editMovie(movieItem)}
                                         >Edit</button>
                                     </li>
                                     <li>
                                         <button
                                             className={styles.deleteMovie}
-                                            onClick={deleteMovie}
+                                            onClick={() => deleteMovie(movieItem.id)}
                                         >Delete</button>
                                     </li>
                                 </ul>

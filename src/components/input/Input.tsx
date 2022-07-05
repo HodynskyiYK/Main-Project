@@ -10,27 +10,38 @@ export const Input: FC<IInput> = (
         inputPlaceholder,
         inputType,
         labelText,
-        inputValue
+        inputValue,
+        errorMessage,
+        onChange,
+        onBlur
     }) => {
 
     return (
-        <>
+        <div className={styles.inputField}>
             {
                 labelText && (
                     <label
-                        className={styles.Label}
+                        className={styles.label}
                         htmlFor={inputName}
                     >{labelText}</label>
                 )
             }
             <input
-                className={classnames(styles.Input, inputClassName && `${styles[inputClassName]}`)}
+                className={classnames(styles.field, {
+                    [styles.inputClassName]: inputClassName,
+                    [styles.withError]: errorMessage
+                })}
                 type={inputType}
                 id={inputName}
                 name={inputName}
                 placeholder={inputPlaceholder}
                 value={inputValue}
+                onChange={onChange}
+                onBlur={onBlur}
             />
-        </>
+            {
+                errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>
+            }
+        </div>
     )
 }

@@ -1,12 +1,6 @@
+import { IMovieItem } from '../../../../store/actions-types'
+
 export interface IMovieModalForm {
     modalName: string,
-    formValues?: {
-        title: string,
-        releaseDate: string,
-        movieUrl: string,
-        rating: number,
-        genre: string,
-        duration: string | number,
-        overview: string
-    }
+    formValues?: IMovieItem | undefined
 }

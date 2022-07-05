@@ -27,3 +27,22 @@
     }
   }
 }
+
+.completionMovie {
+  text-align: center;
+
+  .completionIcon {
+    margin-bottom: 1.875rem;
+  }
+
+  .completionTitle {
+    margin-bottom: 1.875rem;
+  }
+
+  .completionText {
+    font: 400 1.25rem/1.2em $main_font;
+    max-width: 18.75rem;
+    margin: 0 auto;
+    padding-bottom: 1.875rem;
+  }
+}

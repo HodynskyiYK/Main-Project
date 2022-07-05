@@ -5,7 +5,10 @@ import { ISelect } from './selectTypes'
 export const Select: FC<ISelect> = (
     {
         selectName,
-        labelText
+        labelText,
+        options,
+        onChange,
+        onBlur
     }) => {
 
     return (
@@ -22,9 +25,11 @@ export const Select: FC<ISelect> = (
                 className={styles.Select}
                 name={selectName}
                 id={selectName}
-            >
-                <option value="SelectGenre">Select Genre</option>
-            </select>
+                onChange={onChange}
+                onBlur={onBlur}
+            >{
+                options.map((item: string, index: number) => <option key={`${index}-${item.length}`} value={item}>{item}</option>)
+            }</select>
         </>
     )
 }

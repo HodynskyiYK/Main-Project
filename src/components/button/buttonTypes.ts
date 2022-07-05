@@ -2,7 +2,8 @@ import { ReactNode } from 'react'
 
 export interface IButton {
     buttonClassName: string,
-    buttonAction?: () => void,
+    buttonAction?: (e?: any) => void,
+    buttonType?: 'button' | 'submit' | 'reset' | undefined,
     buttonText: string | ReactNode,
     buttonDisabled?: boolean
 }

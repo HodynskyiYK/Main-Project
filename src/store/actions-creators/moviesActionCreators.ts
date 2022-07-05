@@ -37,5 +37,64 @@ export const MoviesActionCreators = {
                     dispatch(MoviesActionCreators.setError('Some error!'))
                 }
         }
+    },
+    addMovie: (newMovie: IMovieItem) => {
+        return async (dispatch: AppDispatch) => {
+            dispatch(MoviesActionCreators.setLoading(true))
+            try {
+                const response = await fetch(moviesApis.addMovie(), {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newMovie)
+                })
+                dispatch(MoviesActionCreators.setLoading(false))
+                return response.status
+            } catch (err) {
+                console.log(err)
+                dispatch(MoviesActionCreators.setError('Some error!'))
+            }
+        }
+    },
+    updateMovie: (newMovie: IMovieItem) => {
+        return async (dispatch: AppDispatch) => {
+            dispatch(MoviesActionCreators.setLoading(true))
+            try {
+                const response = await fetch(moviesApis.addMovie(), {
+                    method: 'PUT',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newMovie)
+                })
+                dispatch(MoviesActionCreators.setLoading(false))
+                return response.status
+            } catch (err) {
+                console.log(err)
+                dispatch(MoviesActionCreators.setError('Some error!'))
+            }
+        }
+    },
+    deleteMovie: (id: number) => {
+        return async (dispatch: AppDispatch) => {
+            dispatch(MoviesActionCreators.setLoading(true))
+            try {
+                const response = await fetch(moviesApis.deleteMovie(id), {
+                    method: 'DELETE',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                })
+                dispatch(MoviesActionCreators.setLoading(false))
+                return response.status
+            } catch (err) {
+                console.log(err)
+                dispatch(MoviesActionCreators.setError('Some error!'))
+            }
+        }
     }
 }

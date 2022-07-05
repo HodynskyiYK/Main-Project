@@ -10,16 +10,16 @@ export enum MovieActionsTypes {
 export interface IMovieItem {
     title: string,
     tagline: string,
-    vote_average: number,
-    vote_count: number,
+    vote_average: number | string,
+    vote_count: number | string,
     release_date: string,
     poster_path: string,
     overview: string,
-    budget: number,
-    revenue: number,
-    runtime: number,
-    genres: string[],
-    id: number
+    budget: number | string,
+    revenue: number | string,
+    runtime: number | string,
+    genres: string[] | string,
+    id?: number
 }
 
 interface ISetMovies {

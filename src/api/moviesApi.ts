@@ -14,4 +14,13 @@ export const moviesApis = {
 
         return `${process.env.REACT_APP_API}/movies?${requestParams}`
     },
+    addMovie: () => {
+        return `${process.env.REACT_APP_API}/movies`
+    },
+    updateMovie: () => {
+        return `${process.env.REACT_APP_API}/movies`
+    },
+    deleteMovie: (id: number) => {
+        return `${process.env.REACT_APP_API}/movies/${id}`
+    }
 }

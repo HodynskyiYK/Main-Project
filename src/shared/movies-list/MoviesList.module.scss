@@ -1,0 +1,25 @@
+@import "../../styles/stylesVariables";
+
+.moviesCounter {
+  padding: 1.25rem 0;
+
+  p {
+    color: $white_color;
+    font: 400 1.25rem/1.2em $main_font;
+    text-transform: lowercase;
+
+    b {
+      font-weight: 600;
+    }
+  }
+}
+
+.moviesList {
+  padding-bottom: 1.5rem;
+}
+
+.loadMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

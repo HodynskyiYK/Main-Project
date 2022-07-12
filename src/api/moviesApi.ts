@@ -22,5 +22,18 @@ export const moviesApis = {
     },
     deleteMovie: (id: number) => {
         return `${process.env.REACT_APP_API}/movies/${id}`
+    },
+    searchMovieByTitle: (searchValue?: string, searchBy?: string, sortBy?: string) => {
+        const parsedParams = queryString.parse('')
+        parsedParams.search = searchValue ? searchValue : 'action'
+        if (searchBy) {
+            parsedParams.searchBy = searchBy
+        }
+        if (sortBy) {
+            parsedParams.sortBy = sortBy
+            parsedParams.sortOrder = 'desc'
+        }
+        const requestParams = queryString.stringify(parsedParams)
+        return `${process.env.REACT_APP_API}/movies?${requestParams}`
     }
 }

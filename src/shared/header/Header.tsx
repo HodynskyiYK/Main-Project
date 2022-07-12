@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 import classnames from 'classnames'
-import {AddMovie} from '../../pages/Home/components/add-movie'
-import {FindYourMovie} from '../../pages/Home/components/find-your-movie'
+import {AddMovie} from '../add-movie'
+import {FindYourMovie} from '../find-your-movie'
 import { Logo } from '../../components/logo'
 import { useMovieDetailsContext } from '../../context/movie-details-context'
 import styles from './Header.module.scss'
@@ -23,7 +23,7 @@ export const Header: FC = () => {
                     <AddMovie/>
                 </div>
                 <div className={classnames('col', 'col-12')}>
-                    <FindYourMovie/>
+                    <FindYourMovie />
                 </div>
             </div>
         </header>

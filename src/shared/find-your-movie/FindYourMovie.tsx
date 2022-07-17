@@ -27,7 +27,11 @@ export const FindYourMovie: FC = () => {
         if (pathname !== '/search') {
             setRedirectTo(true)
         } else {
-            history.push(`/search?search=${value}`)
+            if (value) {
+                history.push(`/search?search=${value}`)
+            } else {
+                history.push(`/search`)
+            }
         }
     }
 

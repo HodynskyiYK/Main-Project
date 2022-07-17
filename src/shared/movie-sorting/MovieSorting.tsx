@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import styles from './MovieSorting.module.scss'
 import { useAction, useTypedSelector } from '../../hooks'
 import { MOVIE_SORTING_TYPES } from './movieSortingConstants'
@@ -8,7 +8,14 @@ export const MovieSorting: FC = () => {
     const [showSortingList, setShowSortingList] = useState<boolean>(false)
     const [activeSorting, setActiveSorting] = useState<string>('Release date')
     const {fetchMovies} = useAction()
-    const {filterBy} = useTypedSelector(state => state.movies)
+    const {filterBy, sortBy} = useTypedSelector(state => state.movies)
+
+    useEffect(() => {
+        const activeSortBy = MOVIE_SORTING_TYPES.find((item) => item.value === sortBy)
+        if (activeSortBy?.name) {
+            setActiveSorting(activeSortBy.name)
+        }
+    }, [sortBy])
 
     const toggleSortingList = () => {
         setShowSortingList(!showSortingList)

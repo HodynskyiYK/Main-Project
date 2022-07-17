@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import classnames from 'classnames'
 import {IFilter, IMoviesFilters} from './filtersTypes'
 import styles from './MoviesFilters.module.scss'
@@ -7,7 +7,13 @@ import { useAction, useTypedSelector } from '../../hooks'
 export const MoviesFilters: FC<IMoviesFilters> = ({filters}) => {
     const [activeFilter, setActiveFilter] = useState<string>('All')
     const {fetchMovies} = useAction()
-    const {sortBy} = useTypedSelector(state => state.movies)
+    const {sortBy, filterBy} = useTypedSelector(state => state.movies)
+
+    useEffect(() => {
+        if (filterBy) {
+            setActiveFilter(filterBy)
+        }
+    }, [filterBy])
 
     const filterMovies = (genre: string) => {
         if (genre !== activeFilter) {

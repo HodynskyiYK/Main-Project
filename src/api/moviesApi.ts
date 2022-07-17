@@ -25,7 +25,7 @@ export const moviesApis = {
     },
     searchMovieByTitle: (searchValue?: string, searchBy?: string, sortBy?: string) => {
         const parsedParams = queryString.parse('')
-        parsedParams.search = searchValue ? searchValue : 'action'
+        parsedParams.search = searchValue ? searchValue : ''
         if (searchBy) {
             parsedParams.searchBy = searchBy
         }

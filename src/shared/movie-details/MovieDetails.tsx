@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 import classnames from 'classnames'
+import queryString from 'query-string'
+import {useLocation, useHistory} from 'react-router-dom'
 import { Logo } from '../../components/logo'
 import { Button, ButtonTypes } from '../../components/button'
 import { SEARCH_ICON_29_30 } from '../../assets/svg'
@@ -13,6 +15,19 @@ export const MovieDetails: FC = () => {
         movieDetailsState,
         hideMovieDetails
     } = useMovieDetailsContext()
+    const history = useHistory()
+    const location = useLocation()
+
+    const backToSearAction = () => {
+        const parsedParams = queryString.parse(location.search)
+        if (parsedParams?.movie) {
+            delete parsedParams.movie
+        }
+        const requestParams = queryString.stringify(parsedParams)
+        const redirectUrl = `${location.pathname}?${requestParams}`
+        hideMovieDetails()
+        history.push(redirectUrl)
+    }
 
     if (!movieDetailsState || !movieInfo) {
         return null
@@ -28,7 +43,7 @@ export const MovieDetails: FC = () => {
                     <Button
                         buttonClassName={ButtonTypes.ICON_BTN}
                         buttonText={SEARCH_ICON_29_30}
-                        buttonAction={hideMovieDetails}
+                        buttonAction={backToSearAction}
                     />
                 </div>
             </div>

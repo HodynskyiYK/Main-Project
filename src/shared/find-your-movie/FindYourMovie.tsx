@@ -3,12 +3,13 @@ import {Redirect, useLocation, useHistory} from 'react-router-dom'
 import classnames from 'classnames'
 import { Button, ButtonTypes } from '../../components/button'
 import { Input } from '../../components/input'
-import { useQuery } from '../../hooks'
+import { useAction, useQuery } from '../../hooks'
 import styles from './FindYourMovie.module.scss'
 
 export const FindYourMovie: FC = () => {
     const [redirectTo, setRedirectTo] = useState<boolean>(false)
     const [value, setValue] = useState<string>('')
+    const {setFilterBy, setSortingBy} = useAction()
     const searchQuery = useQuery()
     const history = useHistory()
     const {pathname} = useLocation()
@@ -24,6 +25,8 @@ export const FindYourMovie: FC = () => {
 
     const formHandler = (event: FormEvent) => {
         event.preventDefault()
+        setSortingBy('release_date')
+        setFilterBy('')
         if (pathname !== '/search') {
             setRedirectTo(true)
         } else {

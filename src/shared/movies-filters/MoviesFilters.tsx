@@ -12,6 +12,8 @@ export const MoviesFilters: FC<IMoviesFilters> = ({filters}) => {
     useEffect(() => {
         if (filterBy) {
             setActiveFilter(filterBy)
+        } else {
+            setActiveFilter('All')
         }
     }, [filterBy])
 

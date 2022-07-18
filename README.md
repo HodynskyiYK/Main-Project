@@ -28,3 +28,9 @@ Integrate with the backend and use Redux
 Install [formik](https://formik.org/), implement a possibility to “Add movie”, “Edit movie” and “Delete movie”.
 
 Required validation criteria can be found in API docs: [http://localhost:4000/api-docs](http://localhost:4000/api-docs). 
+
+## Home task (Task 8)
+
+Using [react-router](https://reactrouter.com/) define routes according to the following acceptance criteria.
+Move state related to search parameters and current movie into URL.<br>
+Use routes to get state from URL and use [react-router](https://reactrouter.com/) API to update URL when changes should be made to the state.

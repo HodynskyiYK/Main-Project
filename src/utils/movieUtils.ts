@@ -1,4 +1,5 @@
 import { IMovieItem } from '../store/actions-types'
+import { moviesApis } from '../api'
 
 export const getMovieImage = (imageName: string): string => require(`/src/assets/images/movie-images/${imageName}`)
 
@@ -39,3 +40,8 @@ export const fillEmptyMovieFields = (movie: IMovieItem): IMovieItem => ({
     runtime: movie.runtime ? movie.runtime : 0,
     genres: movie.genres ? splitMoviesGenres(movie.genres) : ['Comedy', 'Drama', 'Romance']
 })
+
+export const searchMovie = async (searchValue?: string, searchBy?: string, sortBy?: string) => {
+    const response = await fetch(moviesApis.searchMovieByTitle(searchValue, searchBy, sortBy))
+    return await response.json()
+}

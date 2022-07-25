@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader tests To match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="loaderContent"
+  >
+    <span
+      class="loader"
+    />
+  </div>
+</DocumentFragment>
+`;

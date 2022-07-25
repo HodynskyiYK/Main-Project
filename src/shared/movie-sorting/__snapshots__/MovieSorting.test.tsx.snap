@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieSorting tests To match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="movieSorting"
+  >
+    <p
+      class="label"
+    >
+      Sort by
+    </p>
+    <p
+      class="selectedValue"
+    >
+      Release date
+    </p>
+  </div>
+</DocumentFragment>
+`;

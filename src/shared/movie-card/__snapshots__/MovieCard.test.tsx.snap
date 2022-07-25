@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard tests To match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="col col-4"
+  >
+    <div
+      class="movieCard"
+    >
+      <div
+        class="cardHeader"
+      >
+        <span
+          class="movieLink"
+          title="La La Land"
+        >
+          <img
+            alt="La La Land"
+            class="movieImage"
+            src="https://image.tmdb.org/t/p/w500/ylXCdC106IKiarftHkcacasaAcb.jpg"
+          />
+        </span>
+        <button
+          class="editBtn"
+        />
+      </div>
+      <div
+        class="cardBody"
+      >
+        <h4
+          class="movieTitle"
+        >
+          La La Land
+        </h4>
+        <p
+          class="release"
+        >
+          2016
+        </p>
+        <p
+          class="genre"
+        >
+          <span>
+            <span
+              class=""
+            >
+              Comedy, Drama, Romance
+            </span>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

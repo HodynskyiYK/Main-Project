@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesFilters tests To match snapshot 1`] = `
+<DocumentFragment>
+  <ul
+    class="filtersList"
+  >
+    <li
+      class="filtersItem"
+    >
+      <span
+        class="filterValue activeFilter"
+      >
+        All
+      </span>
+    </li>
+    <li
+      class="filtersItem"
+    >
+      <span
+        class="filterValue"
+      >
+        Documentary
+      </span>
+    </li>
+    <li
+      class="filtersItem"
+    >
+      <span
+        class="filterValue"
+      >
+        Comedy
+      </span>
+    </li>
+    <li
+      class="filtersItem"
+    >
+      <span
+        class="filterValue"
+      >
+        Horror
+      </span>
+    </li>
+    <li
+      class="filtersItem"
+    >
+      <span
+        class="filterValue"
+      >
+        Crime
+      </span>
+    </li>
+    <li
+      class="filtersItem"
+    >
+      <span
+        class="filterValue"
+      >
+        Action
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

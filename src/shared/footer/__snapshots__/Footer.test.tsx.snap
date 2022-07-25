@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer tests To match snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="footer"
+  >
+    <div
+      class="container footerContent"
+    >
+      <p
+        class="copyright"
+      >
+        <span
+          class="Logo"
+        >
+          <b>
+            netflix
+          </b>
+          roulette
+        </span>
+      </p>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

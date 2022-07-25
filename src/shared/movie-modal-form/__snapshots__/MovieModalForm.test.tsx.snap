@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieModalForm tests To match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="modal"
+  >
+    <div
+      class="modalContent"
+    >
+      <button
+        class="closeModal"
+        data-testid="close-btn"
+      />
+      <form
+        class="addMovieForm"
+      >
+        <p
+          class="h1 formTitle"
+        >
+          Form title
+        </p>
+        <div
+          class="row smaller formGroup"
+        >
+          <div
+            class="col smaller col-8"
+          >
+            <div
+              class="inputField"
+            >
+              <label
+                class="label"
+                for="title"
+              >
+                Title
+              </label>
+              <input
+                class="field"
+                id="title"
+                name="title"
+                placeholder="Select Title"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="col smaller col-4"
+          >
+            <div
+              class="inputField"
+            >
+              <label
+                class="label"
+                for="release_date"
+              >
+                Release date
+              </label>
+              <input
+                class="field"
+                id="release_date"
+                name="release_date"
+                placeholder="Select Date"
+                type="date"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="row smaller formGroup"
+        >
+          <div
+            class="col smaller col-8"
+          >
+            <div
+              class="inputField"
+            >
+              <label
+                class="label"
+                for="poster_path"
+              >
+                Movie url
+              </label>
+              <input
+                class="field"
+                id="poster_path"
+                name="poster_path"
+                placeholder="https://"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="col smaller col-4"
+          >
+            <div
+              class="inputField"
+            >
+              <label
+                class="label"
+                for="vote_average"
+              >
+                Rating
+              </label>
+              <input
+                class="field"
+                id="vote_average"
+                name="vote_average"
+                placeholder="7.8"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="row smaller formGroup"
+        >
+          <div
+            class="col smaller col-8"
+          >
+            <label
+              class="Label"
+              for="genres"
+            >
+              Genre
+            </label>
+            <select
+              class="Select"
+              id="genres"
+              name="genres"
+            >
+              <option
+                value="Action"
+              >
+                Action
+              </option>
+              <option
+                value="Adventure"
+              >
+                Adventure
+              </option>
+              <option
+                value="Crime"
+              >
+                Crime
+              </option>
+              <option
+                value="Drama"
+              >
+                Drama
+              </option>
+              <option
+                value="Mystery"
+              >
+                Mystery
+              </option>
+              <option
+                value="Documentary"
+              >
+                Documentary
+              </option>
+              <option
+                value="Comedy"
+              >
+                Comedy
+              </option>
+              <option
+                value="Romance"
+              >
+                Romance
+              </option>
+              <option
+                value="Horror"
+              >
+                Horror
+              </option>
+              <option
+                value="Thriller"
+              >
+                Thriller
+              </option>
+              <option
+                value="Fantasy"
+              >
+                Fantasy
+              </option>
+            </select>
+          </div>
+          <div
+            class="col smaller col-4"
+          >
+            <div
+              class="inputField"
+            >
+              <label
+                class="label"
+                for="runtime"
+              >
+                Runtime
+              </label>
+              <input
+                class="field"
+                id="runtime"
+                name="runtime"
+                placeholder="minutes"
+                type="number"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="row smaller smaller formGroup"
+        >
+          <div
+            class="col smaller col-12"
+          >
+            <label
+              class="Label"
+              for="overview"
+            >
+              Overview
+            </label>
+            <textarea
+              class="TextArea"
+              cols="30"
+              id="overview"
+              name="overview"
+              placeholder="Movie description"
+              rows="7"
+            />
+          </div>
+        </div>
+        <div
+          class="formButtons"
+        >
+          <button
+            class="btn resetBtn"
+            type="reset"
+          >
+            Reset
+          </button>
+          <button
+            class="btn searchBtn"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;

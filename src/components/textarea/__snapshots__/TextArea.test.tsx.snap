@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea tests To match snapshot 1`] = `
+<DocumentFragment>
+  <textarea
+    class="TextArea"
+    cols="30"
+    id="test"
+    name="test"
+    rows="7"
+  />
+</DocumentFragment>
+`;

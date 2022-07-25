@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContent tests To match snapshot 1`] = `
+<DocumentFragment>
+  <main>
+    <section>
+      <div
+        class="container mainContent"
+      >
+        <div
+          class="topContent"
+        >
+          <div
+            class="row align-items-center justify-content-between"
+          >
+            <div
+              class="col"
+            >
+              <ul
+                class="filtersList"
+              >
+                <li
+                  class="filtersItem"
+                >
+                  <span
+                    class="filterValue activeFilter"
+                  >
+                    All
+                  </span>
+                </li>
+                <li
+                  class="filtersItem"
+                >
+                  <span
+                    class="filterValue"
+                  >
+                    Documentary
+                  </span>
+                </li>
+                <li
+                  class="filtersItem"
+                >
+                  <span
+                    class="filterValue"
+                  >
+                    Comedy
+                  </span>
+                </li>
+                <li
+                  class="filtersItem"
+                >
+                  <span
+                    class="filterValue"
+                  >
+                    Horror
+                  </span>
+                </li>
+                <li
+                  class="filtersItem"
+                >
+                  <span
+                    class="filterValue"
+                  >
+                    Crime
+                  </span>
+                </li>
+                <li
+                  class="filtersItem"
+                >
+                  <span
+                    class="filterValue"
+                  >
+                    Action
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="col"
+            >
+              <div
+                class="movieSorting"
+              >
+                <p
+                  class="label"
+                >
+                  Sort by
+                </p>
+                <p
+                  class="selectedValue"
+                >
+                  Release date
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="moviesCounter"
+        >
+          <p>
+            <b>
+              0
+            </b>
+             movies found
+          </p>
+        </div>
+        <div
+          class="loaderContent"
+        >
+          <span
+            class="loader"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</DocumentFragment>
+`;

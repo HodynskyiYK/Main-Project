@@ -11,6 +11,7 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "@types/react-router-dom": "^5.3.3",
+    "axios": "^0.27.2",
     "formik": "^2.2.9",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -44,6 +45,13 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+.svg$": "<rootDir>/__mocks__/svgMock.ts",
+      "^.+.(png|jpg|ttf|woff|woff2)$": "<rootDir>/__mocks__/fileMock.ts",
+      "\\.(css|sass|scss)$": "<rootDir>/node_modules/jest-css-modules"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
@@ -64,6 +72,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "husky": "^8.0.1",
+    "jest-css-modules": "^2.1.0",
     "lint-staged": "^13.0.0",
     "prettier": "^2.6.2",
     "prettier-eslint": "^15.0.1",

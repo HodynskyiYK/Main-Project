@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesList tests To match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="moviesCounter"
+  >
+    <p>
+      <b>
+        0
+      </b>
+       movies found
+    </p>
+  </div>
+  <div
+    class="loaderContent"
+  >
+    <span
+      class="loader"
+    />
+  </div>
+</DocumentFragment>
+`;

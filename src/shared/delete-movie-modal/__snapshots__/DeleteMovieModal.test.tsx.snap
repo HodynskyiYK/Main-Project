@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteMovieModal tests To match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="modal"
+  >
+    <div
+      class="modalContent"
+    >
+      <button
+        class="closeModal"
+        data-testid="close-btn"
+      />
+      <div
+        class="deleteMovieCard"
+      >
+        <p
+          class="h1 confirmTitle"
+        >
+          Delete movie
+        </p>
+        <p
+          class="confirmText"
+        >
+          Are you sure you want to delete this movie?
+        </p>
+        <p
+          class="confirmButton"
+        >
+          <button
+            class="btn confirmBtn"
+          >
+            Confirm
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

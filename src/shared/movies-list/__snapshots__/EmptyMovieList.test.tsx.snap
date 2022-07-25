@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyMovieList tests To match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="emptyList"
+  >
+    <p
+      class="h1"
+    >
+      WE WERE SEARCHING, SEARCHING, BUT NOT FOUND.
+    </p>
+    <p>
+      Try to change the request, or choose something interesting from our selections
+    </p>
+  </div>
+</DocumentFragment>
+`;

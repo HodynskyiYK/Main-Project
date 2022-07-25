@@ -23,6 +23,7 @@ export const Modal: FC<IModal> = ({children}) => {
                 <button
                     className={styles.closeModal}
                     onClick={hideModal}
+                    data-testid="close-btn"
                 >
                     {CLOSE_ICON_23_23}
                 </button>

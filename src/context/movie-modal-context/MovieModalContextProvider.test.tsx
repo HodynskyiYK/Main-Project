@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { MovieDetailsContextProvider } from '../movie-details-context'
+import { ProvidersMock } from '../../../__mocks__/ProviderMock'
 
 describe('MovieModalContextProvider tests', () => {
 
     test('To match snapshot', () => {
-        const {asFragment} = render(<MovieDetailsContextProvider><div>Children</div></MovieDetailsContextProvider>)
+        const {asFragment} = render(<ProvidersMock><div>Children</div></ProvidersMock>)
         expect(asFragment()).toMatchSnapshot()
     })
 })

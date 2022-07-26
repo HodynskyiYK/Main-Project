@@ -19,7 +19,7 @@ export const Search: FC = () => {
                 <MovieDetailsContextProvider>
                     <Header/>
                     <MovieDetails/>
-                    <main>
+                    <main data-testid="search-page">
                         <section>
                             <div className={classnames('container', styles.mainContent)}>
                                 <div className={styles.topContent}>

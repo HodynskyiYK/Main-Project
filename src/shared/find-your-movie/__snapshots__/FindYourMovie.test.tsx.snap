@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FindYourMovie tests To match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="findYourMovie"
+  >
+    <p
+      class="h1 h1"
+    >
+      Find your movie
+    </p>
+    <form
+      class="searchForm"
+    >
+      <div
+        class="formGroup"
+      >
+        <div
+          class="findInput"
+        >
+          <div
+            class="inputField"
+          >
+            <input
+              class="field"
+              id="find-movie"
+              name="find-movie"
+              placeholder="What do you want to watch?"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <button
+          class="btn searchBtn"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;

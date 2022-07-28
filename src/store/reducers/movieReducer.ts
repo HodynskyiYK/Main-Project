@@ -1,6 +1,6 @@
 import { IMoviesActions, IMoviesState, MovieActionsTypes } from '../actions-types'
 
-const initialState: IMoviesState = {
+export const initialState: IMoviesState = {
     movies: [],
     isLoading: false,
     error: null,

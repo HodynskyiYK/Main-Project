@@ -1,5 +1,6 @@
 import { IMovieItem } from '../store/actions-types'
 import { moviesApis } from '../api'
+import axios from 'axios'
 
 export const getMovieImage = (imageName: string): string => require(`/src/assets/images/movie-images/${imageName}`)
 
@@ -20,7 +21,7 @@ export const configureRuntime = (runtime: number | string): string => {
 
 export const splitMoviesGenres = (genres: string[] | string): string[] => {
     if (typeof genres === 'string') {
-        return genres.split(',')
+        return genres.split(', ')
     }
     return genres
 
@@ -42,6 +43,10 @@ export const fillEmptyMovieFields = (movie: IMovieItem): IMovieItem => ({
 })
 
 export const searchMovie = async (searchValue?: string, searchBy?: string, sortBy?: string) => {
-    const response = await fetch(moviesApis.searchMovieByTitle(searchValue, searchBy, sortBy))
-    return await response.json()
+    try {
+        const response = await axios.get(moviesApis.searchMovieByTitle(searchValue, searchBy, sortBy))
+        return await response.data
+    } catch (err) {
+        console.log(err)
+    }
 }

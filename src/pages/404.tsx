@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
+import React from 'react'
 
-export const PageNotFound: FC = () => {
+export default function PageNotFound() {
 
     return (
         <div>

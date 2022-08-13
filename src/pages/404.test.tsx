@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Home } from './Home'
+import { PageNotFound } from './404'
 
-describe('Home tests', () => {
+describe('PageNotFound tests', () => {
 
     test('To match snapshot', () => {
-        const {asFragment} = render(<Home/>)
+        const {asFragment} = render(<PageNotFound/>)
         expect(asFragment()).toMatchSnapshot()
     })
 })

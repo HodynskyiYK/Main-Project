@@ -1,22 +1,27 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import classnames from 'classnames'
 import queryString from 'query-string'
-import {useLocation, useHistory} from 'react-router-dom'
 import { Logo } from '../../components/logo'
 import { Button, ButtonTypes } from '../../components/button'
 import { SEARCH_ICON_29_30 } from '../../assets/svg'
 import { concatMovieGenres, configureRuntime, getFullYear, getMovieImage } from '../../utils'
 import { useMovieDetailsContext } from '../../context/movie-details-context'
 import styles from './MovieDetails.module.scss'
+import { IMovieDetails } from './movieDetailsTypes'
 
-export const MovieDetails: FC = () => {
+export const MovieDetails: FC<IMovieDetails> = ({movieDetails}) => {
     const {
         movieInfo,
         movieDetailsState,
         hideMovieDetails
     } = useMovieDetailsContext()
-    const history = useHistory()
-    const location = useLocation()
+    const {updateMovieDetails} = useMovieDetailsContext()
+
+    useEffect(() => {
+        if (movieDetails) {
+            updateMovieDetails(movieDetails)
+        }
+    }, [movieDetails])
 
     const backToSearAction = () => {
         const parsedParams = queryString.parse(location.search)
@@ -26,7 +31,6 @@ export const MovieDetails: FC = () => {
         const requestParams = queryString.stringify(parsedParams)
         const redirectUrl = `${location.pathname}?${requestParams}`
         hideMovieDetails()
-        history.push(redirectUrl)
     }
 
     if (!movieDetailsState || !movieInfo) {

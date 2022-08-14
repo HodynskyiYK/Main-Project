@@ -29,7 +29,7 @@ describe('MovieCard tests', () => {
 
     test('To match snapshot', () => {
         const {asFragment} = render(<ProvidersMock>
-            <MovieCard movieItem={movieItemData} editMovie={() => {}} deleteMovie={() => {}} getMovieDetails={() => {}} />
+            <MovieCard movieItem={movieItemData} getMovieDetails={() => console.log('true')} />
         </ProvidersMock>)
         expect(asFragment()).toMatchSnapshot()
     })

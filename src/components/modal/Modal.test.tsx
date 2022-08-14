@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal } from './Modal'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { ProvidersMock } from '../../../__mocks__/ProviderMock'
 
 describe('Modal tests', () => {

@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import { MovieModalContextProvider } from '../../context/movie-modal-context'
-import { MovieDetailsContextProvider, useMovieDetailsContext } from '../../context/movie-details-context'
+import { MovieDetailsContextProvider } from '../../context/movie-details-context'
 import { Header } from '../../shared/header'
 import { MovieDetails } from '../../shared/movie-details'
 import { Footer } from '../../shared/footer'
@@ -28,7 +28,7 @@ const Movie: NextPage<IMovie> = ({movie}) => {
 }
 
 export const getServerSideProps = async (context: any) => {
-    let {id} = context.query
+    const {id} = context.query
     const movie = await getMovieById(id)
 
     return {

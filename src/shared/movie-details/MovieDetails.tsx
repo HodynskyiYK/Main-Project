@@ -21,6 +21,7 @@ export const MovieDetails: FC<IMovieDetails> = ({movieDetails}) => {
         if (movieDetails) {
             updateMovieDetails(movieDetails)
         }
+    // eslint-disable-next-line
     }, [movieDetails])
 
     const backToSearAction = () => {
@@ -28,8 +29,6 @@ export const MovieDetails: FC<IMovieDetails> = ({movieDetails}) => {
         if (parsedParams?.movie) {
             delete parsedParams.movie
         }
-        const requestParams = queryString.stringify(parsedParams)
-        const redirectUrl = `${location.pathname}?${requestParams}`
         hideMovieDetails()
     }
 

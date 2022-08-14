@@ -44,7 +44,7 @@ export const fillEmptyMovieFields = (movie: IMovieItem): IMovieItem => ({
 
 export const searchMovie = async (searchValue?: string, searchBy?: string, sortBy?: string, filterBy?: string) => {
     try {
-        const response = await axios.get(moviesApis.searchMovieByTitle(searchValue, searchBy, sortBy))
+        const response = await axios.get(moviesApis.searchMovieByTitle(searchValue, searchBy, sortBy, filterBy))
         return await response.data
     } catch (err) {
         console.log(err)

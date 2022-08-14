@@ -1,6 +1,5 @@
-import React, { FC, useEffect, useRef, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import queryString from 'query-string'
-import {useHistory, useLocation} from 'react-router-dom'
 import classnames from 'classnames'
 import {MovieCard} from '../movie-card'
 import { useMovieModalContext } from '../../context/movie-modal-context'
@@ -9,9 +8,8 @@ import { DeleteMovieModal } from '../delete-movie-modal'
 import { useMovieDetailsContext } from '../../context/movie-details-context'
 import { IMovieItem } from '../../store/actions-types'
 import { EmptyMovieList, MOVIE_INFORMATION } from '../movies-list'
-import { searchMovie } from '../../utils'
-import { ISearchMoviesList, movieSearchBy } from './searchMoviesListTypes'
-import { useAction, useTypedSelector } from '../../hooks'
+import { ISearchMoviesList } from './searchMoviesListTypes'
+import { useAction } from '../../hooks'
 import { MOVIE_SORTING_TYPES } from '../movie-sorting'
 import styles from './SearchMoviesList.module.scss'
 import { FILTERS_VALUES } from '../movies-filters'
@@ -20,11 +18,7 @@ export const SearchMoviesList: FC<ISearchMoviesList> = ({defaultMovies}) => {
     const [movies, setMovies] = useState([])
     const [editMovie, setEditMovie] = useState<IMovieItem>(MOVIE_INFORMATION)
     const [deleteMovieId, setDeleteMovieId] = useState<number>(0)
-    const {filterBy, sortBy} = useTypedSelector(state => state.movies)
     const {setFilterBy, setSortingBy} = useAction()
-    const prevFilterBy = useRef(filterBy)
-    const prevSortBy = useRef(sortBy)
-    const history = useHistory()
     const {
         editMovieModalState,
         deleteMovieModalState,

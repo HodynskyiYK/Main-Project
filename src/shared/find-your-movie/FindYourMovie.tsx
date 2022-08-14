@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useEffect, useState } from 'react'
+import React, { FC, FormEvent, useState } from 'react'
 import classnames from 'classnames'
 import { Button, ButtonTypes } from '../../components/button'
 import { Input } from '../../components/input'
@@ -7,7 +7,6 @@ import styles from './FindYourMovie.module.scss'
 import { useRouter } from 'next/router'
 
 export const FindYourMovie: FC = () => {
-    const [redirectTo, setRedirectTo] = useState<boolean>(false)
     const [value, setValue] = useState<string>('')
     const {setFilterBy, setSortingBy} = useAction()
     const router = useRouter()

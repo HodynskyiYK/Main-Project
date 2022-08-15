@@ -1,6 +1,5 @@
 import { concatMovieGenres, configureRuntime, getFullYear, searchMovie, splitMoviesGenres } from './movieUtils'
 import axios from 'axios'
-import { render, screen } from '@testing-library/react'
 
 jest.mock('axios')
 const mockedAxios = axios as jest.Mocked<typeof axios>

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { useEffect } from 'react'
 import classnames from 'classnames'
 import { ErrorBoundary } from '../shared/error-boundaries'
 import { Header } from '../shared/header'
@@ -7,11 +7,34 @@ import { MovieModalContextProvider } from '../context/movie-modal-context'
 import { MovieDetailsContextProvider } from '../context/movie-details-context'
 import { MovieDetails } from '../shared/movie-details'
 import styles from '../shared/main-content/MainContent.module.scss'
-import { SearchMoviesList } from '../shared/search-movies-list'
 import { FILTERS_VALUES, MoviesFilters } from '../shared/movies-filters'
-import { MovieSorting } from '../shared/movie-sorting'
+import { MOVIE_SORTING_TYPES, MovieSorting } from '../shared/movie-sorting'
+import { searchMovie } from '../utils'
+import { IMovieItem } from '../store/actions-types'
+import { NextPage } from 'next'
+import { MovieCard } from '../shared/movie-card'
+import queryString from 'query-string'
+import { useAction } from '../hooks'
 
-export const Search: FC = () => {
+interface ISearchPage {
+    movies: IMovieItem[]
+}
+
+const Search: NextPage<ISearchPage> = ({movies}) => {
+    const {setFilterBy, setSortingBy} = useAction()
+
+    useEffect(() => {
+        const parsedParams = queryString.parse(location.search)
+        if (parsedParams.sortBy) {
+            const newSortByState = MOVIE_SORTING_TYPES.find((item) => item.name.toLowerCase() === parsedParams.sortBy?.toString().toLowerCase())?.value
+            newSortByState && setSortingBy(newSortByState)
+        }
+        if (parsedParams.genre) {
+            const newFilterBy = FILTERS_VALUES.find((item) => item.name.toLowerCase() === parsedParams.genre?.toString().toLowerCase())?.value
+            newFilterBy && setFilterBy(newFilterBy)
+        }
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <ErrorBoundary errorText={'Oops! Something went wrong. Please try again later.'}>
@@ -32,7 +55,17 @@ export const Search: FC = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <SearchMoviesList/>
+                                {/*<SearchMoviesList defaultMovies={movies}/>*/}
+                                <div className={classnames('row', styles.moviesList)}>{
+                                    movies.map((movieItem: IMovieItem) => (
+                                        <MovieCard
+                                            key={movieItem.id}
+                                            movieItem={movieItem}
+                                            searchGenre={''}
+                                            isSearchPage={true}
+                                        />
+                                    ))
+                                }</div>
                             </div>
                         </section>
                     </main>
@@ -42,3 +75,27 @@ export const Search: FC = () => {
         </ErrorBoundary>
     )
 }
+
+export const getServerSideProps = async (context: any) => {
+    let {searchValue, searchBy, sortBy, genre} = context.query
+    if (!searchValue) {
+        searchValue = ''
+    }
+    if (!sortBy) {
+        sortBy = ''
+    }
+    if (!genre) {
+        genre = ''
+    }
+    if (searchValue) {
+        searchBy = 'title'
+    }
+    const response = await searchMovie(searchValue, searchBy, sortBy, genre)
+    const movies = await response.data
+
+    return {
+        props: {movies}
+    }
+}
+
+export default Search

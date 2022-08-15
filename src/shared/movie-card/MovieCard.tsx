@@ -1,33 +1,23 @@
 import React, { FC, useState, MouseEvent, useRef } from 'react'
-import {useHistory, useLocation} from 'react-router-dom'
 import classnames from 'classnames'
 import Highlighter from 'react-highlight-words'
 import {IMovieCard} from './movieCardTypes'
 import { CLOSE_ICON_12_13, THREE_VERTICAL_DOTS_44_44 } from '../../assets/svg'
 import { concatMovieGenres, getFullYear, getMovieImage } from '../../utils'
 import styles from './MoviesCard.module.scss'
-import queryString from 'query-string'
+import { useRouter } from 'next/router'
 
 
-export const MovieCard: FC<IMovieCard> = ({movieItem, editMovie, deleteMovie, getMovieDetails, searchGenre, isSearchPage}) => {
+export const MovieCard: FC<IMovieCard> = ({movieItem, editMovie, deleteMovie, searchGenre}) => {
     const [editMode, setEditMode] = useState<boolean>(false)
+    const router = useRouter()
     const movieGenres = useRef(concatMovieGenres(movieItem.genres))
-    const history = useHistory()
-    const {pathname, search} = useLocation()
     const movieImage = movieItem.poster_path
 
     const movieLinkHandler = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault()
-        if (isSearchPage) {
-            const parsedParams = queryString.parse(search)
-            if (movieItem.id) {
-                parsedParams.movie = movieItem.id.toString()
-            }
-            const pushParams = `${pathname}?${queryString.stringify(parsedParams)}`
-            history.push(pushParams)
-        }
 
-        getMovieDetails(movieItem)
+        router.push(`/movie/${movieItem.id}`)
     }
 
     return (
@@ -63,13 +53,13 @@ export const MovieCard: FC<IMovieCard> = ({movieItem, editMovie, deleteMovie, ge
                                     <li>
                                         <button
                                             className={styles.editMovie}
-                                            onClick={() => editMovie(movieItem)}
+                                            onClick={() => editMovie && editMovie(movieItem)}
                                         >Edit</button>
                                     </li>
                                     <li>
                                         <button
                                             className={styles.deleteMovie}
-                                            onClick={() => deleteMovie(movieItem.id)}
+                                            onClick={() => deleteMovie && deleteMovie(movieItem.id)}
                                         >Delete</button>
                                     </li>
                                 </ul>

@@ -42,9 +42,18 @@ export const fillEmptyMovieFields = (movie: IMovieItem): IMovieItem => ({
     genres: movie.genres ? splitMoviesGenres(movie.genres) : ['Comedy', 'Drama', 'Romance']
 })
 
-export const searchMovie = async (searchValue?: string, searchBy?: string, sortBy?: string) => {
+export const searchMovie = async (searchValue?: string, searchBy?: string, sortBy?: string, filterBy?: string) => {
     try {
-        const response = await axios.get(moviesApis.searchMovieByTitle(searchValue, searchBy, sortBy))
+        const response = await axios.get(moviesApis.searchMovieByTitle(searchValue, searchBy, sortBy, filterBy))
+        return await response.data
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export const getMovieById = async (id: number) => {
+    try {
+        const response = await axios.get(moviesApis.getOneMovie(id))
         return await response.data
     } catch (err) {
         console.log(err)

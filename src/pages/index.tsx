@@ -1,4 +1,3 @@
-import React, { FC } from 'react'
 import { Header } from '../shared/header'
 import { Footer } from '../shared/footer'
 import { ErrorBoundary } from '../shared/error-boundaries'
@@ -11,7 +10,7 @@ import { MovieSorting } from '../shared/movie-sorting'
 import { MoviesList } from '../shared/movies-list'
 import styles from '../shared/main-content/MainContent.module.scss'
 
-export const Home: FC = () => {
+export default function Home() {
 
     return (
         <ErrorBoundary errorText={'Oops! Something went wrong. Please try again later.'}>

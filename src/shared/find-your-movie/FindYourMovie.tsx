@@ -1,47 +1,21 @@
-import React, { FC, FormEvent, useEffect, useState } from 'react'
-import {Redirect, useLocation, useHistory} from 'react-router-dom'
+import React, { FC, FormEvent, useState } from 'react'
 import classnames from 'classnames'
 import { Button, ButtonTypes } from '../../components/button'
 import { Input } from '../../components/input'
-import { useAction, useQuery } from '../../hooks'
+import { useAction } from '../../hooks'
 import styles from './FindYourMovie.module.scss'
+import { useRouter } from 'next/router'
 
 export const FindYourMovie: FC = () => {
-    const [redirectTo, setRedirectTo] = useState<boolean>(false)
     const [value, setValue] = useState<string>('')
     const {setFilterBy, setSortingBy} = useAction()
-    const searchQuery = useQuery()
-    const history = useHistory()
-    const {pathname} = useLocation()
-
-    useEffect(() => {
-        const movieTitle = searchQuery.get('search')
-
-        if (movieTitle && pathname === '/search') {
-            setValue(movieTitle)
-        }
-    // eslint-disable-next-line
-    }, [])
+    const router = useRouter()
 
     const formHandler = (event: FormEvent) => {
         event.preventDefault()
         setSortingBy('release_date')
         setFilterBy('')
-        if (pathname !== '/search') {
-            setRedirectTo(true)
-        } else {
-            if (value) {
-                history.push(`/search?search=${value}`)
-            } else {
-                history.push(`/search`)
-            }
-        }
-    }
-
-    if (redirectTo) {
-        return (
-            <Redirect to={`/search?search=${value}`} />
-        )
+        router.push('/search')
     }
 
     return (

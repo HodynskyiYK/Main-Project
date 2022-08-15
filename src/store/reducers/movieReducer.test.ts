@@ -1,5 +1,4 @@
 import { initialState, movieReducer } from './movieReducer'
-import { MovieActionsTypes } from '../actions-types'
 import { MoviesActionCreators } from '../actions-creators/moviesActionCreators'
 
 describe('movieReducer tests', () => {

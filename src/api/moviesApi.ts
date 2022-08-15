@@ -12,28 +12,37 @@ export const moviesApis = {
         }
         const requestParams = queryString.stringify(parsedParams)
 
-        return `${process.env.REACT_APP_API}/movies?${requestParams}`
+        return `http://localhost:4000/movies?${requestParams}`
     },
     addMovie: () => {
-        return `${process.env.REACT_APP_API}/movies`
+        return `http://localhost:4000/movies`
     },
     updateMovie: () => {
-        return `${process.env.REACT_APP_API}/movies`
+        return `http://localhost:4000/movies`
     },
     deleteMovie: (id: number) => {
-        return `${process.env.REACT_APP_API}/movies/${id}`
+        return `http://localhost:4000/movies/${id}`
     },
-    searchMovieByTitle: (searchValue?: string, searchBy?: string, sortBy?: string) => {
-        const parsedParams = queryString.parse('')
+    searchMovieByTitle: (searchValue?: string, searchBy?: string, sortBy?: string, filterBy?: string) => {
+        const parsedParams = queryString.parse('limit=9&offset=0')
         parsedParams.search = searchValue ? searchValue : ''
         if (searchBy) {
             parsedParams.searchBy = searchBy
         }
+        if (filterBy) {
+            parsedParams.filter = filterBy
+        }
         if (sortBy) {
             parsedParams.sortBy = sortBy
             parsedParams.sortOrder = 'desc'
+        } else {
+            parsedParams.sortBy = 'release_date'
+            parsedParams.sortOrder = 'desc'
         }
         const requestParams = queryString.stringify(parsedParams)
-        return `${process.env.REACT_APP_API}/movies?${requestParams}`
+        return `http://localhost:4000/movies?${requestParams}`
+    },
+    getOneMovie: (movieId: number) => {
+        return `http://localhost:4000/movies/${movieId}`
     }
 }
